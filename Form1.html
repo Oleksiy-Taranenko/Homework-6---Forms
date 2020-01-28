@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table with forms</title>
+    <script>
+        function sizePic() {
+            size = document.getElementById("size").value;
+            img = document.getElementById("pic");
+            img.width = 60 + 20 * size;
+        }
+    </script>
+</head>
+
+<body>
+    <table cellpadding="100" cellspacing=0 border="1" width="100%">
+        <tr>
+            <td>
+                <form action="handler.php" method="POST">
+                    <p><select size="1" name="select1" id="select1">
+                            <option value="variant1">Вариант №1</option>
+                        </select>
+                        <input type="submit" value="Отправить">
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form action="handler.php" method="POST">
+                    <p><select size="5" name="select2" id="select2">
+                            <option selected value="variant1">Вариант №1</option>
+                            <option value="variant2">Вариант №2</option>
+                            <option value="variant3">Вариант №3</option>
+                            <option value="variant4">Вариант №4</option>
+                            <option value="variant5">Вариант №5</option>
+                        </select>
+                        <input type="submit" value="Отправить">
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form action="handler.php" method="POST">
+                    <p>
+                        <b>Укажите цифру:</b>
+                    </p>
+                    <p><input type="number" name="number" size="3" min="0" max="10" value="4"></p>
+                </form>
+            </td>
+            <td>
+                <form action="handler.php" method="POST">
+                    <p><select size="1" multiple name="select3" id="select3">
+                            <option selected value="variant1">Вариант №1</option>
+                            <option value="variant2">Вариант №2</option>
+                        </select>
+                    </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b>Размер рисунка:</b> <input type="range" min="1" max="5" id="size" oninput="sizePic()" value="3">
+                </p>
+                <p><img src="Винни и Пятачок.jpg" alt="Винни и Пятачок" id="pic"></p>
+            </td>
+            <td>
+                <form>
+                    <p>
+                        <button type="reset">Очистить</button>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form action="http://google.com/search" method="GET" target="_blank">
+                    <p><input type="search" name="search" id="search" placeholder="Поиск по сайту">
+                        <input type="submit" value="Найти">
+                    </p>
+                </form>
+            </td>
+            <td>
+                <form action="handler.php">
+                    <p><b>Укажите цвет фона:</b> <input type="color" name="bg" value="#ff0000">
+                        <input type="submit" value="Выбрать"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="handler.php">
+                    <p><b>Укажите</b></p>
+                    <p><input name="radio button" type="radio" value="rb1"><b>Radio BUTTON</b></p>
+                    <p><input name="radio button" type="radio" value="rb2"><b>Radio BUTTON</b></p>
+                    <p><input name="radio button" type="radio" value="rb3"><b>Radio BUTTON</b></p>
+                    <p><input type="submit" value="Submit"></p>
+                </form>
+            </td>
+            <td>
+                <form action="handler.php" method="POST">
+                    <p><b>Введите текст:</b></p>
+                    <p><textarea name="comment"></textarea></p>
+                    <p><input type="submit" value="Submit"></p>
+                </form>
+            </td>
+            <td>
+                <form action="handler.php">
+                    <p><b>Укажите дату</b></p>
+                    <p><input type="checkbox" name="checkbox year" value="2010"><b>2010</b></p>
+                    <p><input type="checkbox" name="checkbox year" value="2014"><b>2014</b></p>
+                    <p><input type="checkbox" name="checkbox year" value="2017"><b>2017</b></p>
+                    <p><input type="checkbox" name="checkbox year" value="2019"><b>2019</b></p>
+                    <p><input type="submit" value="Отправить"></p>
+                </form>
+            </td>
+            <td>
+                <form enctype="multipart/form-data" method="post">
+                    <p><b>Загрузите фотографии</b></p>
+                    <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">
+                        <input type="submit" value="Отправить"></p>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
